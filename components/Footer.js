@@ -105,6 +105,9 @@ export default function Footer() {
           <Link href="/noodle-bar" passHref legacyBehavior>
             <StyledLink>Noodle Bar</StyledLink>
           </Link>
+          <Link href="/catering" passHref legacyBehavior>
+            <StyledLink>Catering</StyledLink>
+          </Link>
           <Link href="/about" passHref legacyBehavior>
             <StyledLink>About</StyledLink>
           </Link>

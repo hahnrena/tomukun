@@ -77,7 +77,10 @@ const StatusMessage = styled.p`
 
 const initialForm = { name: '', email: '', message: '' };
 
-export default function ContactForm() {
+// `source` labels the inquiry type (e.g. "Catering") in the email subject
+// sent to the client — see pages/api/contact.js. Omit for a plain general
+// contact message.
+export default function ContactForm({ source, messagePlaceholder }) {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
 
@@ -90,7 +93,7 @@ export default function ContactForm() {
     setStatus('submitting');
 
     try {
-      await submitContactForm(form);
+      await submitContactForm({ ...form, source });
       setStatus('success');
       setForm(initialForm);
     } catch (err) {
@@ -119,7 +122,14 @@ export default function ContactForm() {
 
       <Field>
         <Label htmlFor="message">Message</Label>
-        <Textarea id="message" name="message" value={form.message} onChange={handleChange} required />
+        <Textarea
+          id="message"
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          placeholder={messagePlaceholder}
+          required
+        />
       </Field>
 
       <Submit type="submit" disabled={status === 'submitting'}>

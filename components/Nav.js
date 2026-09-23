@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NextImage from 'next/image';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMobileNav, closeMobileNav } from '../store/slices/uiSlice';
@@ -20,10 +21,8 @@ const Bar = styled.header`
 `;
 
 const Logo = styled.a`
-  font-family: ${({ theme }) => theme.fonts.display};
-  font-size: 1.5rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 `;
 
 const Links = styled.ul`
@@ -77,7 +76,9 @@ export default function Nav() {
   return (
     <Bar>
       <Link href="/" passHref legacyBehavior>
-        <Logo>Tomukun</Logo>
+        <Logo>
+          <NextImage src="/brand/tomukun-logo.svg" alt="Tomukun" width={160} height={57} priority />
+        </Logo>
       </Link>
 
       <Links $open={open}>
@@ -89,6 +90,11 @@ export default function Nav() {
         <li>
           <Link href="/noodle-bar" passHref legacyBehavior>
             <NavLink onClick={() => dispatch(closeMobileNav())}>Noodle Bar</NavLink>
+          </Link>
+        </li>
+        <li>
+          <Link href="/catering" passHref legacyBehavior>
+            <NavLink onClick={() => dispatch(closeMobileNav())}>Catering</NavLink>
           </Link>
         </li>
         <li>

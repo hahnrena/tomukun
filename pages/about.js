@@ -46,11 +46,11 @@ export default function AboutPage() {
   return (
     <Layout
       title="About | Tomukun — Ann Arbor, MI"
-      description="The story of Tomukun founder Tom Yon and how two Korean dining concepts grew from one Ann Arbor storefront."
+      description="The story and beginnings of Tomukun"
     >
       <Hero
-        image="/images/about-founder.jpg"
-        alt="PLACEHOLDER — Tomukun founder Tom Yon"
+        image="/images/tomukunAbout.jpg"
+        alt="tomukun dinner table image"
         eyebrow="About"
         title="Korean Comfort, Two Ways."
         short

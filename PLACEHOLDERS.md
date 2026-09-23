@@ -72,6 +72,10 @@ The two concepts use different approaches, per client direction:
 - Korean BBQ / Noodle Bar concept descriptions ([pages/korean-bbq.js](pages/korean-bbq.js), [pages/noodle-bar.js](pages/noodle-bar.js))
 - About page founder story ([pages/about.js](pages/about.js)) — drafted from press/review
   sources per CLAUDE.md; needs client sign-off or replacement copy.
+- Catering page copy ([pages/catering.js](pages/catering.js)) — fully drafted placeholder
+  text, no real packages/pricing/minimums/lead-time info yet. Client wants catering
+  actively promoted, so it's linked in the main Nav and Footer; swap the copy once
+  real details are available.
 
 ## Contact & location details
 `/data/site.js`:

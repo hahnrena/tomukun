@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, message } = req.body || {};
+  const { name, email, message, source } = req.body || {};
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'name, email, and message are required.' });
@@ -24,11 +24,15 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Contact form is not configured yet.' });
   }
 
+  const subject = source
+    ? `New ${source} inquiry from ${name} via tomukun.com`
+    : `New message from ${name} via tomukun.com`;
+
   const { error } = await resend.emails.send({
     from: FROM_EMAIL,
     to: TO_EMAIL,
     replyTo: email,
-    subject: `New message from ${name} via tomukun.com`,
+    subject,
     text: `From: ${name} <${email}>\n\n${message}`,
   });
 
