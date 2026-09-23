@@ -1,0 +1,119 @@
+import Link from 'next/link';
+import styled from 'styled-components';
+import { siteInfo } from '../data/site';
+
+const Wrapper = styled.footer`
+  background: ${({ theme }) => theme.colors.surface};
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+  padding: 4rem 2rem 2rem;
+`;
+
+const Grid = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`;
+
+const Heading = styled.h4`
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: ${({ theme }) => theme.colors.muted};
+  margin-bottom: 0.25rem;
+`;
+
+const Text = styled.p`
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-size: 0.95rem;
+`;
+
+const StyledLink = styled.a`
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-size: 0.95rem;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.text};
+  }
+`;
+
+const Bottom = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 3rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+  color: ${({ theme }) => theme.colors.muted};
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+`;
+
+export default function Footer() {
+  return (
+    <Wrapper>
+      <Grid>
+        <Column>
+          <Heading>Tomukun</Heading>
+          <Text>{siteInfo.address.line1}</Text>
+          <Text>{siteInfo.address.line2}</Text>
+          <Text>{siteInfo.phone}</Text>
+        </Column>
+
+        <Column>
+          <Heading>Hours</Heading>
+          <Text>Open daily</Text>
+          <Text>11:30 AM – 9:30 PM</Text>
+        </Column>
+
+        <Column>
+          <Heading>Explore</Heading>
+          <Link href="/korean-bbq" passHref legacyBehavior>
+            <StyledLink>Korean BBQ</StyledLink>
+          </Link>
+          <Link href="/noodle-bar" passHref legacyBehavior>
+            <StyledLink>Noodle Bar</StyledLink>
+          </Link>
+          <Link href="/about" passHref legacyBehavior>
+            <StyledLink>About</StyledLink>
+          </Link>
+          <Link href="/contact" passHref legacyBehavior>
+            <StyledLink>Contact</StyledLink>
+          </Link>
+        </Column>
+
+        <Column>
+          <Heading>Follow</Heading>
+          {/* TODO: replace with client-provided social links */}
+          <StyledLink href={siteInfo.social.instagram} target="_blank" rel="noreferrer">
+            Instagram
+          </StyledLink>
+          <StyledLink href={siteInfo.social.facebook} target="_blank" rel="noreferrer">
+            Facebook
+          </StyledLink>
+        </Column>
+      </Grid>
+
+      <Bottom>
+        <span>© {new Date().getFullYear()} Tomukun. All rights reserved.</span>
+        <span>Korean BBQ &amp; Noodle Bar — Ann Arbor, MI</span>
+      </Bottom>
+    </Wrapper>
+  );
+}

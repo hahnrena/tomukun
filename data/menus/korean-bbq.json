@@ -1,0 +1,101 @@
+{
+  "concept": "Korean BBQ",
+  "sections": [
+    {
+      "name": "Shareable Appetizers",
+      "image": "/images/menu/korean-bbq-menu-appetizers.jpg",
+      "items": [
+        { "name": "Crispy Seafood Pancake", "description": "Haemul pajeon", "price": 18 },
+        { "name": "Kimchi Pancake", "description": "Kimchi pajeon", "price": 18 },
+        { "name": "Steamed Fluffy Egg", "description": "Gehran jjim", "price": 8 },
+        { "name": "Ba-corn", "description": "Corn, bacon, mozzarella, peppers, onion", "price": 10 },
+        { "name": "Jopchae", "description": "Sweet potato noodles, beef, egg, vegetables", "price": 15 },
+        { "name": "Spicy Rice Cake", "description": "Dduk boki", "price": 16 },
+        { "name": "Fried Pork Dumplings", "description": "Mandoo", "price": 10 },
+        { "name": "Fried Seaweed Rolls", "description": "Gim marhee twigim", "price": 14 },
+        { "name": "Korean Fried Chicken Wings", "description": "Dahk twigim", "price": 15 }
+      ]
+    },
+    {
+      "name": "BBQ Combos",
+      "image": "/images/menu/korean-bbq-menu-combos.jpg",
+      "items": [
+        { "name": "Combo 1", "description": "Serves 2–4, choice of meats", "price": "65–125" },
+        { "name": "Combo 2", "description": "Serves 5–7, six meat selections", "price": 195 },
+        { "name": "Combo 3", "description": "Serves 7–9, eight meat selections", "price": 240 }
+      ]
+    },
+    {
+      "name": "Meats (À La Carte)",
+      "image": "/images/menu/korean-bbq-menu-meats.jpg",
+      "items": [
+        { "name": "Cross Cut Marinated Short Ribs", "description": null, "price": 59 },
+        { "name": "Spicy Pork", "description": null, "price": 43 },
+        { "name": "Ribeye", "description": null, "price": 62 },
+        { "name": "Marinated Chicken", "description": null, "price": 43 }
+      ]
+    },
+    {
+      "name": "Hot Pot",
+      "image": "/images/menu/korean-bbq-menu-hotpot.jpg",
+      "items": [
+        { "name": "Army Stew", "description": "Boodae jongol", "price": 55 },
+        { "name": "Pork & Potato Hotpot", "description": "Gamjatang jongol", "price": 60 },
+        { "name": "Spicy Beef Tripe Hotpot", "description": "Gopchang jongol", "price": 60 }
+      ]
+    },
+    {
+      "name": "Rice Bowls",
+      "image": "/images/menu/korean-bbq-menu-rice-bowls.jpg",
+      "items": [
+        { "name": "Stone Bowl Bibimbop", "description": "Dolsot bibimbop, choice of protein", "price": 16 },
+        { "name": "Dolsot Dupbop", "description": "Stone bowl with kimchi, pork belly, egg", "price": 16 }
+      ]
+    },
+    {
+      "name": "Soups & Stews",
+      "image": "/images/menu/korean-bbq-menu-soups.jpg",
+      "items": [
+        { "name": "Rice Cake Soup", "description": "Dduk guk", "price": 16 },
+        { "name": "Short Rib Soup", "description": "Galbi tang", "price": 20 },
+        { "name": "Ox Bone Soup", "description": "Sullung tang", "price": 18 },
+        { "name": "Spicy Beef Brisket Soup", "description": "Yookae jang", "price": 20 },
+        { "name": "Soybean Soup", "description": "Dwenjang jigae", "price": 16 },
+        { "name": "Kimchi Stew", "description": "Kimchi jigae", "price": 16 },
+        { "name": "Army Stew", "description": "Boodae jigae", "price": 16 },
+        { "name": "Tofu Stew", "description": "Soon dubu, choice of protein", "price": 16 }
+      ]
+    },
+    {
+      "name": "Stir Fry",
+      "items": [
+        { "name": "Spicy Squid Stir-fry", "description": "Ojinguh bokum", "price": 24 },
+        { "name": "Kimchi & Pork Belly Stir-fry", "description": "Jaeyook kimchi bokum", "price": 20 },
+        { "name": "Spicy Squid & Pork Belly Stir-fry", "description": "Oh sahm bokum", "price": 24 },
+        { "name": "Spicy Baby Octopus Stir-fry", "description": "Bool joo koo mi", "price": 24 }
+      ]
+    },
+    {
+      "name": "Noodles",
+      "image": "/images/menu/korean-bbq-menu-noodles.jpg",
+      "items": [
+        { "name": "Cold Buckwheat Noodle Soup", "description": "Mool nengmyun", "price": 16 },
+        { "name": "Spicy Cold Buckwheat Noodles", "description": "Bibim nengmyun", "price": 16 },
+        { "name": "Jajangmyeon", "description": "Black bean noodles", "price": 16 },
+        { "name": "Spicy Seafood Noodle Soup", "description": "Jjampong", "price": 18 },
+        { "name": "Jajang + Jjampong", "description": "Half and half combination", "price": 17 }
+      ]
+    },
+    {
+      "name": "Additional Entrees",
+      "image": "/images/menu/korean-bbq-menu-entrees.jpg",
+      "items": [
+        { "name": "Sweet Sour Fried Tangsuyuk", "description": "Choice of protein", "price": 19 },
+        { "name": "Sweet Spicy Fried Kampongi", "description": "Choice of protein", "price": 19 },
+        { "name": "Broiled Mackerel", "description": "Goh deung uh", "price": 16 },
+        { "name": "Spicy Galbi Jjim", "description": "Mae-un galbi jjim", "price": 34 },
+        { "name": "Spicy Buldak", "description": "Cheese-topped chicken", "price": 18 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "concept": "Noodle Bar",
+  "note": "PLACEHOLDER — all items, descriptions, and section names below are illustrative only, drawn from third-party listings, and must be confirmed with the client before publishing. Prices are intentionally left null.",
+  "sections": [
+    {
+      "name": "PLACEHOLDER — Ramen",
+      "items": [
+        { "name": "PLACEHOLDER — Classic Ramen", "description": "PLACEHOLDER — house broth, noodles, seasonal toppings", "price": null },
+        { "name": "PLACEHOLDER — Spicy Ramen", "description": "PLACEHOLDER — chili-forward broth, noodles, seasonal toppings", "price": null },
+        { "name": "PLACEHOLDER — Vegetarian Ramen", "description": "PLACEHOLDER — vegetable broth, noodles, seasonal vegetables", "price": null }
+      ]
+    },
+    {
+      "name": "PLACEHOLDER — Noodles & Comfort Plates",
+      "items": [
+        { "name": "PLACEHOLDER — Jajangmyun", "description": "PLACEHOLDER — noodles in sweet black bean sauce with pork", "price": null },
+        { "name": "PLACEHOLDER — Curry Noodles", "description": "PLACEHOLDER — curry-based noodle dish", "price": null }
+      ]
+    },
+    {
+      "name": "PLACEHOLDER — Sides",
+      "items": [
+        { "name": "PLACEHOLDER — Dumplings", "description": "PLACEHOLDER — pan-fried or steamed dumplings", "price": null }
+      ]
+    }
+  ]
+}
