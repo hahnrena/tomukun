@@ -14,8 +14,14 @@ Location: `/public/images/`. Full list, purpose, and required dimensions: see
   directed, but still flagged `PLACEHOLDER —` in the alt text
   ([pages/about.js](pages/about.js)) since it isn't the real thing. Replace
   with an actual portrait of Tom Yon when available.
+- `og-image.jpg` — **real, no longer a placeholder.** Social share preview now
+  shows the `tomukun-logo.svg` wordmark centered on a dark background, sized
+  to the standard 1200×630 Open Graph dimensions (`public/brand/tomukun-logo.svg`
+  rasterized and composited — see [components/Layout.js](components/Layout.js)
+  for the `og:image` tag). Swap for real food/lifestyle photography later if
+  the client wants something more visual than the logo mark.
 - Still placeholders: `bbq-grill-01.jpg`, `bbq-interior-01.jpg`, `noodle-ramen-01.jpg`,
-  `noodle-interior-01.jpg`, `og-image.jpg`
+  `noodle-interior-01.jpg`
 
 ## Brand assets
 - `/public/brand/logo.svg` — text wordmark placeholder, replace with final logo file.

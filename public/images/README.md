@@ -19,7 +19,7 @@ a concept button crossfades to that concept's hero photo full-page instead. See
 | `noodle-ramen-01.jpg` | Noodle Bar supporting image (ramen bowl) | 1600×1067 | 3:2 |
 | `noodle-interior-01.jpg` | Noodle Bar supporting image (dining room) | 1600×1067 | 3:2 |
 | `about-founder.jpg` | About page portrait of Tom Yon | 1200×1500 | 4:5 |
-| `og-image.jpg` | Social share preview (Open Graph) | 1200×630 | 1.91:1 |
+| `og-image.jpg` | **Real.** Social share preview (Open Graph) — `tomukun-logo.svg` wordmark centered on a dark background | 1200×630 | 1.91:1 |
 
 ## Menu images
 
