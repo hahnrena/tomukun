@@ -66,7 +66,7 @@ export default function NoodleBarPage() {
 
       <Intro>
         <Body>
-          Where Tomukun started in 2010. A neighborhood noodle bar serving comforting bowls of ramen, jajangmyun, and other Asian-inspired favorites, made for quick lunches, casual dinners, and everything in between. A warm space centered around bold flavors, generous bowls, and the simple comfort of noodles.
+          Where Tomukun started in 2010. A neighborhood noodle bar serving comforting bowls of ramen, udon, and other Asian-inspired favorites, made for quick lunches, casual dinners, and everything in between. A warm space centered around bold flavors, generous bowls, and the simple comfort of noodles.
         </Body>
 
         <CTARow>
