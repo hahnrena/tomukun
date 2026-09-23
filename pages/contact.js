@@ -104,10 +104,6 @@ export default function ContactPage() {
               <InfoLabel>Email</InfoLabel>
               <InfoValue>{siteInfo.email}</InfoValue>
             </InfoRow>
-            <InfoRow>
-              <InfoLabel>Parking</InfoLabel>
-              <InfoValue>{siteInfo.parkingNote}</InfoValue>
-            </InfoRow>
           </InfoList>
         </div>
 
