@@ -40,23 +40,25 @@ const NavButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid ${({ theme }) => theme.colors.textMuted};
   border-radius: 50%;
-  background: none;
+  background: ${({ theme }) => theme.colors.surfaceAlt};
   color: ${({ theme }) => theme.colors.text};
-  font-size: 1.1rem;
+  font-size: 1.6rem;
+  line-height: 1;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 
   &:hover:not(:disabled) {
+    background: ${({ theme }) => theme.colors.accent};
     border-color: ${({ theme }) => theme.colors.accent};
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   &:disabled {
-    opacity: 0.3;
+    opacity: 0.35;
     cursor: not-allowed;
   }
 `;
