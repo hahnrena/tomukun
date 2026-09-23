@@ -57,10 +57,8 @@ export default function Home() {
         <Eyebrow>Our Story</Eyebrow>
         {/* TODO: replace draft copy with client-approved About/brand statement */}
         <Body>
-          Tomukun started in 2010 when founder Tom Yon opened a small noodle bar on E. Liberty
-          St, drawing on the comfort food he grew up with as a second-generation Korean
-          American. In 2014, the space next door became Tomukun Korean BBQ — a more casual,
-          modern take on tabletop grilling. Two concepts, one family table.
+          Tomukun began in 2010 as a neighborhood noodle bar on E. Liberty St, bringing comforting, flavorful dishes inspired by Korean and Southeast Asian home cooking to Ann Arbor. In 2014, the concept expanded next door with Tomukun Korean BBQ, introducing a more casual, modern take on tabletop grilling. Today, the two restaurants share the same spirit: bold flavors, generous plates, and a place where people come together around the table.
+
         </Body>
       </Statement>
     </Layout>
