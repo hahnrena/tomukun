@@ -21,19 +21,28 @@ Location: `/public/images/`. Full list, purpose, and required dimensions: see
 ## Menu content
 The two concepts use different approaches, per client direction:
 
-**Korean BBQ** — real, confirmed content. `data/menus/korean-bbq.json` holds the
-current dinner menu (categories, items, Korean names, prices), transcribed from
-the client's live menu at tomukunbbq.framer.website/menu on 2026-09-23, rendered
-by `components/MenuSection.js` as a 3-per-row grid of item cards (matching that
-site's per-item layout). No `PLACEHOLDER —` labeling on the menu text — treated
-as confirmed, not draft, content.
-- **Item photos are intentionally blank** — each item has an `"image": null`
-  field in the JSON and renders an empty dashed-border box in the grid, per
-  client request (client will add photos manually). To fill one in: set
-  `"image"` to a file path (e.g. `/images/menu/korean-bbq-shortribs.jpg`) —
-  see [`public/images/README.md`](public/images/README.md). The real photo
-  shoot already sitting in `/public/images/menu/` is available to pull from.
-- Re-check against the live site before launch in case the menu/prices change.
+**Korean BBQ** — real, confirmed content, now split into three tabs via
+`components/MenuTabs.js` (matching tomukunbbq.framer.website/menu):
+- **Dinner Menu** tab — `data/menus/korean-bbq.json` (categories, items, Korean
+  names, prices, and now real item photos for all but 2 items — see below),
+  rendered by `components/MenuSection.js` as a 3-per-row grid. No
+  `PLACEHOLDER —` labeling on the menu text — treated as confirmed content.
+  Re-check against the live site before launch in case the menu/prices change.
+- **Drinks Menu** tab — pages through real menu-page images one at a time via
+  `components/MenuPager.js` (prev/next arrows + a "2 / 3" counter), listed in
+  `data/menus/images.js` → `koreanBbqDrinksMenuImages` and stored at
+  `public/images/menu/DrinksMenuPage1.png` (`-2`, `-3`). A "prefer the full
+  document?" link below the pager still points to the original
+  `public/menus/korean-bbq-drinks-menu.pdf` (copied from the client's
+  `Final bbq bar.pdf`) as a fallback.
+- **Lunch Menu** tab — still embeds `public/menus/korean-bbq-lunch-menu.pdf`
+  (copied from `Tomukun K-BBQ Lunch Menu.pdf`) inline via an iframe, with an
+  "open directly" fallback link for browsers that don't render PDFs in iframes.
+- To add/reorder Drinks Menu pages: drop image files in
+  `public/images/menu/` and update the array in `data/menus/images.js`. To
+  swap either PDF: replace the file at the same path, or repoint
+  `concepts.koreanBbq.drinksMenuUrl` / `lunchMenuUrl` in
+  [data/site.js](data/site.js) to a new path.
 - `/data/menus/noodle-bar.json` (unrelated concept) is still the old
   third-party-sourced placeholder data — see below.
 

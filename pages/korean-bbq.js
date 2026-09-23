@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
-import MenuSection from '../components/MenuSection';
+import MenuTabs from '../components/MenuTabs';
 import CTAButton from '../components/CTAButton';
 import ReservationWidget from '../components/ReservationWidget';
 import { siteInfo, concepts } from '../data/site';
 import menuData from '../data/menus/korean-bbq.json';
+import { koreanBbqDrinksMenuImages, koreanBbqLunchMenuImages } from '../data/menus/images';
 
 const Intro = styled.section`
   max-width: 760px;
@@ -98,7 +99,13 @@ export default function KoreanBbqPage() {
         </CTARow>
       </Intro>
 
-      <MenuSection menu={menuData} />
+      <MenuTabs
+        dinnerMenu={menuData}
+        drinksMenuImages={koreanBbqDrinksMenuImages}
+        drinksMenuUrl={concepts.koreanBbq.drinksMenuUrl}
+        lunchMenuImages={koreanBbqLunchMenuImages}
+        lunchMenuUrl={concepts.koreanBbq.lunchMenuUrl}
+      />
 
       <InfoSection id="reserve">
         <Card>

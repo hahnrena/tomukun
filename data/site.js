@@ -46,6 +46,8 @@ export const concepts = {
     phone: '(734) 369-2602',
     facebook: 'https://www.facebook.com/tomukunkoreanbbq/',
     openTableUrl: 'https://www.opentable.com/r/tomukun-korean-barbeque-ann-arbor',
+    drinksMenuUrl: '/menus/korean-bbq-drinks-menu.pdf',
+    lunchMenuUrl: '/menus/korean-bbq-lunch-menu.pdf',
   },
   noodleBar: {
     slug: 'noodle-bar',
