@@ -84,7 +84,7 @@ export default function NoodleBarPage() {
       <InfoSection>
         <Card>
           <CardHeading>Hours &amp; Location</CardHeading>
-          <CardText>Open daily, 11:30 AM – 9:30 PM.</CardText>
+          <CardText>{concepts.noodleBar.hours}.</CardText>
           <CardText style={{ marginTop: '1rem' }}>
             {siteInfo.address.line1}, {siteInfo.address.line2}
           </CardText>

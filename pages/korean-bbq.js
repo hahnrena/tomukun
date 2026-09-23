@@ -60,12 +60,6 @@ const CardText = styled.p`
   line-height: 1.7;
 `;
 
-const HappyHourBadge = styled.p`
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  color: ${({ theme }) => theme.colors.muted};
-`;
-
 export default function KoreanBbqPage() {
   return (
     <Layout
@@ -93,7 +87,12 @@ export default function KoreanBbqPage() {
           <CTAButton href={concepts.koreanBbq.orderUrl} target="_blank" rel="noopener noreferrer">
             Order Now
           </CTAButton>
-          <CTAButton variant="outline" href="#reserve">
+          <CTAButton
+            variant="outline"
+            href={concepts.koreanBbq.openTableUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Reserve a Table
           </CTAButton>
         </CTARow>
@@ -109,13 +108,8 @@ export default function KoreanBbqPage() {
 
       <InfoSection id="reserve">
         <Card>
-          <CardHeading>Hours &amp; Happy Hour</CardHeading>
-          <CardText>Open daily, 11:30 AM – 9:30 PM.</CardText>
-          <HappyHourBadge>
-            Happy Hour: {siteInfo.happyHour.days}, {siteInfo.happyHour.time} —{' '}
-            {siteInfo.happyHour.detail}.{' '}
-            {!siteInfo.happyHour.verified && '(Unconfirmed — verify with client before publishing.)'}
-          </HappyHourBadge>
+          <CardHeading>Hours</CardHeading>
+          <CardText>{concepts.koreanBbq.hours}.</CardText>
           <CardText style={{ marginTop: '1.5rem' }}>
             {siteInfo.address.line1}, {siteInfo.address.line2}
           </CardText>

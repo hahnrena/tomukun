@@ -9,16 +9,8 @@ export const siteInfo = {
     mapQuery: '505 E. Liberty St, Ann Arbor, MI 48104',
   },
   email: 'info@tomukun.com',
-  hours: [
-    { day: 'Monday', time: '11:30 AM – 9:30 PM' },
-    { day: 'Tuesday', time: '11:30 AM – 9:30 PM' },
-    { day: 'Wednesday', time: '11:30 AM – 9:30 PM' },
-    { day: 'Thursday', time: '11:30 AM – 9:30 PM' },
-    { day: 'Friday', time: '11:30 AM – 9:30 PM' },
-    { day: 'Saturday', time: '11:30 AM – 9:30 PM' },
-    { day: 'Sunday', time: '11:30 AM – 9:30 PM' },
-  ],
-  // Confirmed applying to Korean BBQ only — see CLAUDE.md open questions.
+  // Not currently shown on the site — removed from the Korean BBQ page per
+  // client request. Left here in case it comes back later.
   happyHour: {
     concept: 'Korean BBQ',
     days: 'Mon–Thu',
@@ -43,6 +35,7 @@ export const concepts = {
       "Grill your own marinated meats tableside — bulgogi, galbi, spicy pork — alongside banchan, rice bowls, and stews. Modern, dark-wood dining with a full bar and an easy, unfussy take on Korean BBQ.",
     href: '/korean-bbq',
     orderUrl: 'https://toast.app/r/tomukunbbq/order',
+    hours: 'Open daily, 11:30 AM – 9:30 PM',
     phone: '(734) 369-2602',
     facebook: 'https://www.facebook.com/tomukunkoreanbbq/',
     openTableUrl: 'https://www.opentable.com/r/tomukun-korean-barbeque-ann-arbor',
@@ -57,6 +50,7 @@ export const concepts = {
       'Ramen and noodle comfort food rooted in founder Tom Yon’s Korean-American upbringing. Quick, casual, and where the Tomukun story started in 2010.',
     href: '/noodle-bar',
     orderUrl: 'https://order.toasttab.com/online/tomukunnoodlebar',
+    hours: 'Open daily, 11:30 AM – 10:00 PM',
     phone: '(734) 995-8668',
     facebook: 'https://www.facebook.com/p/Tomukun-Noodle-Bar-100063564281436/',
   },

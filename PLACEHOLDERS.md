@@ -68,11 +68,18 @@ The two concepts use different approaches, per client direction:
 
 ## Contact & location details
 `/data/site.js`:
-- `phone`, `email` — placeholder values, confirm current contact info.
-- `social.instagram`, `social.facebook` — placeholder URLs, confirm current handles.
+- `email` — placeholder value, confirm current contact info. (`phone` and
+  `social.facebook` are now real, per-concept values — see `concepts.koreanBbq`
+  / `concepts.noodleBar`.)
+- `social.instagram` — real, shared handle for both concepts.
 - `parkingNote` — unconfirmed, verify with client.
-- `happyHour.verified: false` — Happy Hour (Mon–Thu, 2–5 PM, 20% off alcohol, Korean BBQ
-  only) is shown on the Korean BBQ page but flagged as unconfirmed until the client verifies.
+- **Hours — now real, confirmed, and differ by concept**:
+  `concepts.koreanBbq.hours` = "Open daily, 11:30 AM – 9:30 PM",
+  `concepts.noodleBar.hours` = "Open daily, 11:30 AM – 10:00 PM". This
+  supersedes the single shared "11:30 AM–9:30 PM for both" hours in CLAUDE.md.
+- **Happy Hour removed from the Korean BBQ page for now**, per client request.
+  The data (`siteInfo.happyHour`) is still in `data/site.js`, just unused —
+  easy to re-add to `pages/korean-bbq.js` later if it comes back.
 
 ## Reservations
 - **Now live** — [components/ReservationWidget.js](components/ReservationWidget.js) is a

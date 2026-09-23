@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    { "source": "/", "has": [{ "type": "host", "value": "noodlebar.tomukun.com" }], "destination": "https://www.tomukun.com/noodle-bar", "permanent": true },
+    { "source": "/menu{/}?", "has": [{ "type": "host", "value": "noodlebar.tomukun.com" }], "destination": "https://www.tomukun.com/noodle-bar", "permanent": true },
+    { "source": "/menus/tnb_menu.pdf", "has": [{ "type": "host", "value": "noodlebar.tomukun.com" }], "destination": "https://www.tomukun.com/noodle-bar", "permanent": true },
+    { "source": "/about{/}?", "has": [{ "type": "host", "value": "noodlebar.tomukun.com" }], "destination": "https://www.tomukun.com/about", "permanent": true },
+    { "source": "/contact{/}?", "has": [{ "type": "host", "value": "noodlebar.tomukun.com" }], "destination": "https://www.tomukun.com/contact", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "noodlebar.tomukun.com" }], "destination": "https://www.tomukun.com/noodle-bar", "permanent": true },
+
+    { "source": "/", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/korean-bbq", "permanent": true },
+    { "source": "/dinner-menu{/}?", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/korean-bbq", "permanent": true },
+    { "source": "/korean-barbeque-menu{/}?", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/korean-bbq", "permanent": true },
+    { "source": "/menus/tkb_menu.pdf", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/korean-bbq", "permanent": true },
+    { "source": "/reservations{/}?", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/korean-bbq#reserve", "permanent": true },
+    { "source": "/reservations-waitlist{/}?", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/korean-bbq#reserve", "permanent": true },
+    { "source": "/about-korean-barbeque{/}?", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/about", "permanent": true },
+    { "source": "/contact{/}?", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/contact", "permanent": true },
+    { "source": "/jobs{/}?", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/contact", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "bbq.tomukun.com" }], "destination": "https://www.tomukun.com/korean-bbq", "permanent": true }
+  ]
+}
