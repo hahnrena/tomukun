@@ -57,14 +57,14 @@ const InfoValue = styled.dd`
 
 const MapFrame = styled.div`
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 20 / 18;
+  align-self: start;
   border: 1px solid ${({ theme }) => theme.colors.border};
 
   iframe {
     width: 100%;
     height: 100%;
     border: 0;
-    filter: grayscale(1) invert(0.92) contrast(0.9);
   }
 `;
 
