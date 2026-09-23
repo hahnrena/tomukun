@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
-import MenuSection from '../components/MenuSection';
+import MenuPager from '../components/MenuPager';
 import CTAButton from '../components/CTAButton';
 import { siteInfo, concepts } from '../data/site';
-import menuData from '../data/menus/noodle-bar.json';
+import { noodleBarMenuImages } from '../data/menus/images';
 
 const Intro = styled.section`
   max-width: 760px;
@@ -76,7 +76,13 @@ export default function NoodleBarPage() {
         </CTARow>
       </Intro>
 
-      <MenuSection menu={menuData} />
+      <MenuPager
+        images={noodleBarMenuImages}
+        label="noodle bar menu"
+        pdfUrl={concepts.noodleBar.menuUrl}
+        pdfLabel="Open the menu PDF"
+        aspectRatio="1302 / 1698"
+      />
 
       <InfoSection>
         <Card>

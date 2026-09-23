@@ -64,19 +64,16 @@ tomukunbbq.framer.website/menu):
   `concepts.koreanBbq.drinksMenuUrl` / `lunchMenuUrl` in
   [data/site.js](data/site.js) to a new path.
 
-**Noodle Bar** — `data/menus/noodle-bar.json` (11 sections, ~85 items,
-transcribed from order.toasttab.com/online/tomukunnoodlebar), rendered by the
-same `components/MenuSection.js` grid as Korean BBQ. No item photos and
-**intentionally no blank image placeholders** — `MenuSection.js` only renders
-an item's image slot when `image` is actually set, so Noodle Bar cards show
-just name/price with no empty box. (`components/MenuImages.js`, the old
-image-only menu viewer this replaced, has been deleted as dead code.)
-- Menu items have no `description` (Toast's page only listed name + price) —
-  add descriptions later if the client wants them.
-- One item (`Katsu Buns`, Summer Menu) was marked unavailable at the source;
-  its description reads "Currently unavailable" rather than being silently
-  dropped — revisit if that's changed.
-- Re-check against the live Toast page before launch in case items/prices change.
+**Noodle Bar** — real, client-provided menu images, paged through with the
+same `components/MenuPager.js` viewer as the Korean BBQ Drinks Menu (3 pages:
+food; udon/stir fry/drinks; lunch specials & kids), with a link to
+`public/menus/noodle-bar-menu.pdf`.
+- To add/reorder pages: drop image files in `public/images/menu/` and update
+  `noodleBarMenuImages` in `data/menus/images.js`. To swap the PDF: replace the
+  file at the same path, or repoint `concepts.noodleBar.menuUrl` in
+  [data/site.js](data/site.js).
+- `data/menus/noodle-bar.json` (the older Toast-transcribed item list) is no
+  longer rendered anywhere.
 
 ## Copy
 - Homepage brand statement ([pages/index.js](pages/index.js))

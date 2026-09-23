@@ -48,6 +48,7 @@ export const concepts = {
       'Ramen and noodle comfort food. Quick, casual, and where the Tomukun story started in 2010.',
     href: '/noodle-bar',
     orderUrl: 'https://order.toasttab.com/online/tomukunnoodlebar',
+    menuUrl: '/menus/noodle-bar-menu.pdf',
     hours: 'Open daily, 11:30 AM – 10:00 PM',
     phone: '(734) 995-8668',
     facebook: 'https://www.facebook.com/p/Tomukun-Noodle-Bar-100063564281436/',
