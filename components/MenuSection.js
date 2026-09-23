@@ -2,17 +2,9 @@ import NextImage from 'next/image';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  max-width: 860px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 5rem 2rem;
-`;
-
-const SectionImageFrame = styled.div`
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-bottom: 1.5rem;
-  background: ${({ theme }) => theme.colors.surfaceAlt};
 `;
 
 const Note = styled.p`
@@ -24,51 +16,101 @@ const Note = styled.p`
 `;
 
 const SectionBlock = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 
   &:last-child {
     margin-bottom: 0;
   }
 `;
 
-const SectionName = styled.h3`
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.accent};
+const SectionHeadingRow = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
 `;
 
-const Item = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1.5rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+const SectionName = styled.h3`
+  font-size: 1.4rem;
+  color: ${({ theme }) => theme.colors.accent};
+`;
 
-  &:last-child {
-    border-bottom: none;
+const SectionNote = styled.span`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.muted};
+`;
+
+const ItemGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
   }
 `;
 
-const ItemText = styled.div`
-  flex: 1;
+const ItemCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 24px;
+  padding: 16px;
+`;
+
+// Blank until real dish photos are dropped in — see PLACEHOLDERS.md.
+// Set `image` on the item in data/menus/korean-bbq.json to fill it in.
+const ItemImageFrame = styled.div`
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: ${({ theme }) => theme.colors.surfaceAlt};
+`;
+
+const ItemBody = styled.div`
+  padding: 1.25rem 0.5rem 0.35rem;
 `;
 
 const ItemName = styled.p`
-  font-size: 1.05rem;
+  font-size: 1.35rem;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
 `;
 
-const ItemDescription = styled.p`
-  margin-top: 0.35rem;
-  font-size: 0.9rem;
+const ItemKorean = styled.p`
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
   color: ${({ theme }) => theme.colors.textMuted};
 `;
 
-const ItemPrice = styled.span`
-  font-size: 0.95rem;
+const ItemDescription = styled.p`
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
   color: ${({ theme }) => theme.colors.muted};
-  white-space: nowrap;
+`;
+
+const ItemPrice = styled.span`
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-top: 1.25rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: ${({ theme }) => theme.colors.text};
+
+  strong {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
 `;
 
 const Empty = styled.p`
@@ -76,8 +118,10 @@ const Empty = styled.p`
   text-align: center;
 `;
 
-// Renders a menu JSON file (see /data/menus). Designed to render gracefully
-// with no crashes and no empty layout holes if the data is empty or partial.
+// Renders a menu JSON file (see /data/menus) as a 3-per-row grid of item
+// cards, matching tomukunbbq.framer.website/menu's per-item layout. Designed
+// to render gracefully with no crashes and no empty layout holes if the data
+// is empty or partial.
 export default function MenuSection({ menu }) {
   const sections = menu?.sections ?? [];
 
@@ -89,27 +133,35 @@ export default function MenuSection({ menu }) {
 
       {sections.map((section) => (
         <SectionBlock key={section.name}>
-          {section.image && (
-            <SectionImageFrame>
-              <NextImage
-                src={section.image}
-                alt={`${section.name} at Tomukun Korean BBQ`}
-                fill
-                sizes="(max-width: 860px) 100vw, 860px"
-                style={{ objectFit: 'cover' }}
-              />
-            </SectionImageFrame>
-          )}
-          <SectionName>{section.name}</SectionName>
-          {(section.items ?? []).map((item) => (
-            <Item key={item.name}>
-              <ItemText>
-                <ItemName>{item.name}</ItemName>
-                {item.description && <ItemDescription>{item.description}</ItemDescription>}
-              </ItemText>
-              <ItemPrice>{item.price != null ? `$${item.price}` : 'MP'}</ItemPrice>
-            </Item>
-          ))}
+          <SectionHeadingRow>
+            <SectionName>{section.name}</SectionName>
+            {section.note && <SectionNote>{section.note}</SectionNote>}
+          </SectionHeadingRow>
+          <ItemGrid>
+            {(section.items ?? []).map((item) => (
+              <ItemCard key={item.name}>
+                <ItemImageFrame>
+                  {item.image && (
+                    <NextImage
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  )}
+                </ItemImageFrame>
+                <ItemBody>
+                  <ItemName>{item.name}</ItemName>
+                  {item.korean && <ItemKorean>{item.korean}</ItemKorean>}
+                  {item.description && <ItemDescription>{item.description}</ItemDescription>}
+                  <ItemPrice>
+                    $ <strong>{item.price != null ? item.price : 'MP'}</strong>
+                  </ItemPrice>
+                </ItemBody>
+              </ItemCard>
+            ))}
+          </ItemGrid>
         </SectionBlock>
       ))}
     </Wrapper>

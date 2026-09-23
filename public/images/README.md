@@ -27,25 +27,20 @@ a concept button crossfades to that concept's hero photo full-page instead. See
 confirmed content, not placeholders (no `PLACEHOLDER —` labeling needed).
 
 **Korean BBQ** uses a structured, text-based menu (`data/menus/korean-bbq.json`,
-rendered by `components/MenuSection.js`) with a real dish photo as a header image
-for each section:
+rendered by `components/MenuSection.js`) laid out as a 3-per-row grid of item
+cards (matching tomukunbbq.framer.website/menu), each with its own blank image
+slot — intentionally left empty for manual placement per the client's request.
 
-| File | Section |
-|---|---|
-| `korean-bbq-menu-appetizers.jpg` | Shareable Appetizers |
-| `korean-bbq-menu-combos.jpg` | BBQ Combos |
-| `korean-bbq-menu-meats.jpg` | Meats (À La Carte) |
-| `korean-bbq-menu-hotpot.jpg` | Hot Pot |
-| `korean-bbq-menu-rice-bowls.jpg` | Rice Bowls |
-| `korean-bbq-menu-soups.jpg` | Soups & Stews |
-| `korean-bbq-menu-noodles.jpg` | Noodles |
-| `korean-bbq-menu-entrees.jpg` | Additional Entrees |
+To add a photo for an item: put the file in this folder and set `"image"` on
+that item in `data/menus/korean-bbq.json` to its path (e.g.
+`/images/menu/korean-bbq-shortribs.jpg`) — no component changes needed.
 
-(Stir Fry has no header photo yet — add one and set `image` on that section in
-the JSON to fill it in.) The remaining, unrenamed `DSC*.jpg` / `_DSC*.jpg` files
-in this folder are the rest of that same photo shoot (more angles of the dishes
-above, plus a few not currently used) — a pool to pull from for per-item photos
-or to replace other still-placeholder images elsewhere in `/public/images/`.
+`korean-bbq-menu-appetizers.jpg`, `-combos.jpg`, `-meats.jpg`, `-hotpot.jpg`,
+`-rice-bowls.jpg`, `-soups.jpg`, `-noodles.jpg`, `-entrees.jpg`, and the
+remaining unrenamed `DSC*.jpg` / `_DSC*.jpg` files in this folder are all from
+the same photo shoot — currently unused by the page (the per-section header
+photo layout they were matched to was replaced by the per-item grid above) but
+available as a pool to pull individual item photos from.
 
 **Noodle Bar** instead displays scanned/photographed menu pages directly
 (`data/menus/images.js`, rendered by `components/MenuImages.js`):

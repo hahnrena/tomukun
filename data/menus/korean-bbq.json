@@ -3,98 +3,91 @@
   "sections": [
     {
       "name": "Shareable Appetizers",
-      "image": "/images/menu/korean-bbq-menu-appetizers.jpg",
       "items": [
-        { "name": "Crispy Seafood Pancake", "description": "Haemul pajeon", "price": 18 },
-        { "name": "Kimchi Pancake", "description": "Kimchi pajeon", "price": 18 },
-        { "name": "Steamed Fluffy Egg", "description": "Gehran jjim", "price": 8 },
-        { "name": "Ba-corn", "description": "Corn, bacon, mozzarella, peppers, onion", "price": 10 },
-        { "name": "Jopchae", "description": "Sweet potato noodles, beef, egg, vegetables", "price": 15 },
-        { "name": "Spicy Rice Cake", "description": "Dduk boki", "price": 16 },
-        { "name": "Fried Pork Dumplings", "description": "Mandoo", "price": 10 },
-        { "name": "Fried Seaweed Rolls", "description": "Gim marhee twigim", "price": 14 },
-        { "name": "Korean Fried Chicken Wings", "description": "Dahk twigim", "price": 15 }
+        { "name": "Crispy Seafood Pancake", "korean": "해물파전 | Haemul Pajeon", "description": "Seafood pancake, scallions", "price": 18, "image": "/images/menu/CrispySeafoodPancake.jpg" },
+        { "name": "Kimchi Pancake", "korean": "김치해물파전 | Kimchi Pajeon", "description": "Fermented kimchi, seafood, chili heat", "price": 18, "image": "/images/menu/KimchiPancake.jpg" },
+        { "name": "Steamed Fluffy Egg", "korean": "계란찜 | Gehran Jjim", "description": "Steamed egg soufflé, scallions", "price": 8, "image": "/images/menu/SteamedFluffyEgg.jpg" },
+        { "name": "Ba-corn", "korean": "콘치즈 | Kon Cheese", "description": "Sweet corn, bacon, mozzarella, bell pepper, onion", "price": 10, "image": "/images/menu/Ba-corn.jpg" },
+        { "name": "Jopchae", "korean": "잡채 | Jopchae", "description": "Sweet potato glass noodles, beef, egg, seasonal vegetables, sesame soy", "price": 15, "image": "/images/menu/Jopchae.jpg" },
+        { "name": "Spicy Rice Cake", "korean": "떡볶이 | Dduk Boki", "description": "Chewy rice cakes with vegetables and fish cakes in sweet and spicy gochujang sauce", "price": 16, "image": "/images/menu/SpicyRiceCake.jpg" },
+        { "name": "Fried Pork Dumplings", "korean": "만두 | Mandoo", "description": "Fried pork dumplings, soy vinaigrette", "price": 10, "image": "/images/menu/FriedPorkDumplings.jpg" },
+        { "name": "Fried Seaweed Rolls", "korean": "김말이 튀김 | Gim Marhee Twigim", "description": "Fried mini seaweed rolls filled with vegetables and noodles", "price": 14, "image": "/images/menu/FriedSeaweedRolls.jpg" },
+        { "name": "Korean Fried Chicken Wings", "korean": "닭튀김 | Dahk Twigim", "description": "Fried jumbo chicken wings served with pickled radish. Choice of Plain, Soy Garlic, or Sweet and Spicy. Allow 15 minutes", "price": 15, "image": "/images/menu/KoreanFriedChickenWings.jpg" }
       ]
     },
     {
       "name": "BBQ Combos",
-      "image": "/images/menu/korean-bbq-menu-combos.jpg",
       "items": [
-        { "name": "Combo 1", "description": "Serves 2–4, choice of meats", "price": "65–125" },
-        { "name": "Combo 2", "description": "Serves 5–7, six meat selections", "price": 195 },
-        { "name": "Combo 3", "description": "Serves 7–9, eight meat selections", "price": 240 }
+        { "name": "Combo 1", "korean": null, "description": "Pick 2 ($65), 3 ($95), or 4 ($125): Beef Brisket, Marinated Ribeye, Spicy Pork, Marinated Chicken, Marinated Short Ribs, Cross Cut Marinated Short Ribs, Pork Belly (+10)", "price": "65–125", "image": "/images/menu/Combo1.jpg" },
+        { "name": "Combo 2", "korean": null, "description": "Serves 5–7: Beef Brisket, Pork Belly, Boneless Rib, Spicy Pork, Marinated Chicken, Marinated Short Ribs", "price": 195, "image": "/images/menu/Combo2.jpg" },
+        { "name": "Combo 3", "korean": null, "description": "Serves 7–9: Short Ribs, Ribeye, Marinated Ribeye, Boneless Rib, Beef Brisket, Pork Belly, Spicy Pork, Marinated Short Ribs", "price": 240, "image": "/images/menu/Combo3.jpg" }
       ]
     },
     {
       "name": "Meats (À La Carte)",
-      "image": "/images/menu/korean-bbq-menu-meats.jpg",
+      "note": "Serves 2 people",
       "items": [
-        { "name": "Cross Cut Marinated Short Ribs", "description": null, "price": 59 },
-        { "name": "Spicy Pork", "description": null, "price": 43 },
-        { "name": "Ribeye", "description": null, "price": 62 },
-        { "name": "Marinated Chicken", "description": null, "price": 43 }
+        { "name": "Cross Cut Marinated Short Ribs", "korean": "엘에이 갈비 | LA Galbi", "description": null, "price": 59, "image": "/images/menu/CrossCutMarinatedShortRibs.jpg" },
+        { "name": "Spicy Pork", "korean": "돼지불고기 | Dwaejji Bulgogi", "description": null, "price": 43, "image": "/images/menu/SpicyPork.jpg" },
+        { "name": "Ribeye", "korean": "생등심 | Saeng Deungshim", "description": null, "price": 62, "image": "/images/menu/Ribeye.jpg" },
+        { "name": "Marinated Chicken", "korean": "닭불고기 | Dahk Bulgogi", "description": null, "price": 43, "image": "/images/menu/MarinatedChicken.jpg" }
       ]
     },
     {
       "name": "Hot Pot",
-      "image": "/images/menu/korean-bbq-menu-hotpot.jpg",
       "items": [
-        { "name": "Army Stew", "description": "Boodae jongol", "price": 55 },
-        { "name": "Pork & Potato Hotpot", "description": "Gamjatang jongol", "price": 60 },
-        { "name": "Spicy Beef Tripe Hotpot", "description": "Gopchang jongol", "price": 60 }
+        { "name": "Army Stew", "korean": "부대전골 | Boodae Jongol", "description": "Spicy beef broth, ramen noodles, ham, sausage, spam, raw tofu, dumplings, beans, cheese, rice cake, green onions, and red chili peppers", "price": 55, "image": "/images/menu/ArmyStew_Boodaejongol.jpg" },
+        { "name": "Pork & Potato Hotpot", "korean": "감자탕전골 | Gamjatang Jongol", "description": "Spicy hot pot with chunks of pork ribs and spine, potatoes, green onions, and cabbage greens", "price": 60, "image": "/images/menu/Pork&PotatoHotpot.jpg" },
+        { "name": "Spicy Beef Tripe Hotpot", "korean": "곱창전골 | Gopchang Jongol", "description": "Spicy hot pot with beef, intestines, tripe, cabbage greens, radish, and udon noodles", "price": 60, "image": "/images/menu/SpicyBeefTripeHotpot.jpg" }
       ]
     },
     {
       "name": "Rice Bowls",
-      "image": "/images/menu/korean-bbq-menu-rice-bowls.jpg",
       "items": [
-        { "name": "Stone Bowl Bibimbop", "description": "Dolsot bibimbop, choice of protein", "price": 16 },
-        { "name": "Dolsot Dupbop", "description": "Stone bowl with kimchi, pork belly, egg", "price": 16 }
+        { "name": "Stone Bowl Bibimbop", "korean": "돌솥비빔밥 | Dolsot Bibimbop", "description": "Sizzling stone bowl with rice, carrots, spinach, zucchini, Korean radish, mushrooms, bean sprouts, fiddlehead, and a fried egg, served with gochujang sauce on the side. Choice of Vegetable, Tofu, Kimchi, Beef, Chicken, or Seafood (+2)", "price": 16, "image": "/images/menu/StoneBowlBibimbop.jpg" },
+        { "name": "Dolsot Dupbop", "korean": "돌솥덮밥 | Dolsot Dupbop", "description": "Sizzling stone bowl with rice, kimchi, pork belly, and egg — mix carefully before eating for a fried-rice-like experience", "price": 16, "image": "/images/menu/DolsotDupbop.jpg" }
       ]
     },
     {
       "name": "Soups & Stews",
-      "image": "/images/menu/korean-bbq-menu-soups.jpg",
       "items": [
-        { "name": "Rice Cake Soup", "description": "Dduk guk", "price": 16 },
-        { "name": "Short Rib Soup", "description": "Galbi tang", "price": 20 },
-        { "name": "Ox Bone Soup", "description": "Sullung tang", "price": 18 },
-        { "name": "Spicy Beef Brisket Soup", "description": "Yookae jang", "price": 20 },
-        { "name": "Soybean Soup", "description": "Dwenjang jigae", "price": 16 },
-        { "name": "Kimchi Stew", "description": "Kimchi jigae", "price": 16 },
-        { "name": "Army Stew", "description": "Boodae jigae", "price": 16 },
-        { "name": "Tofu Stew", "description": "Soon dubu, choice of protein", "price": 16 }
+        { "name": "Rice Cake Soup", "korean": "떡국 | Dduk Guk", "description": "Beef broth with chewy rice cake, scallions, onions, egg, shredded beef brisket, and dry roasted seaweed. Add dumpling (+3)", "price": 16, "image": "/images/menu/RiceCakeSoup.jpg" },
+        { "name": "Short Rib Soup", "korean": "갈비탕 | Galbi Tang", "description": "Tender beef short ribs with radish, scallions, and onions in a soothing beef broth", "price": 20, "image": "/images/menu/ShortRibSoup.jpg" },
+        { "name": "Ox Bone Soup", "korean": "설렁탕 | Sullung Tang", "description": "Mild, milky white ox bone broth with beef brisket. Scallions, sea salt, and red pepper seasoning served on the side", "price": 18, "image": "/images/menu/OxBoneSoup.jpg" },
+        { "name": "Spicy Beef Brisket Soup", "korean": "육개장 | Yookae Jang", "description": "Shredded beef brisket with scallions, bean sprouts, fiddlehead, onions, egg, and noodles in a spicy beef broth", "price": 20, "image": "/images/menu/SpicyBeefBrisketSoup.jpg" },
+        { "name": "Soybean Soup", "korean": "된장찌개 | Dwenjang Jigae", "description": "A rich fermented soybean broth with tofu, mushrooms, onions, zucchini, and beef", "price": 16, "image": "/images/menu/SoybeanSoup.jpg" },
+        { "name": "Kimchi Stew", "korean": "김치찌개 | Kimchi Jigae", "description": "Rich and spicy kimchi broth with rice cake, tofu, scallions, onions, and pork", "price": 16, "image": "/images/menu/KimchiStew.jpg" },
+        { "name": "Army Stew", "korean": "부대찌개 | Boodae Jigae", "description": "Spicy beef broth, ramen noodles, ham, sausage, spam, beans, cheese, rice cake, green onions, and red chili flakes", "price": 16, "image": "/images/menu/ArmyStew_BoodaeJigae.jpg" },
+        { "name": "Tofu Stew", "korean": "순두부찌개 | Soon Dubu", "description": "A hot and spicy silken tofu stew with scallions and a raw egg cracked in before serving. Choice of Mushroom, Pork, Beef, or Seafood", "price": 16, "image": "/images/menu/TofuStew.jpg" }
       ]
     },
     {
       "name": "Stir Fry",
       "items": [
-        { "name": "Spicy Squid Stir-fry", "description": "Ojinguh bokum", "price": 24 },
-        { "name": "Kimchi & Pork Belly Stir-fry", "description": "Jaeyook kimchi bokum", "price": 20 },
-        { "name": "Spicy Squid & Pork Belly Stir-fry", "description": "Oh sahm bokum", "price": 24 },
-        { "name": "Spicy Baby Octopus Stir-fry", "description": "Bool joo koo mi", "price": 24 }
+        { "name": "Spicy Squid Stir-fry", "korean": "오징어볶음 | Ojinguh Bokum", "description": "Stir-fried with green onions, carrots, cabbage, and bell peppers", "price": 24, "image": "/images/menu/SpicySquidStirfry.jpg" },
+        { "name": "Kimchi & Pork Belly Stir-fry", "korean": "제육김치볶음 | Jaeyook Kimchi Bokum", "description": "Kimchi and pork belly stir-fry with rice cakes, onions, scallions, and raw tofu", "price": 20, "image": "/images/menu/Kimchi&PorkbellyStirfry.jpg" },
+        { "name": "Spicy Squid & Pork Belly Stir-fry", "korean": "오삼불고기 | Oh Sahm Bokum", "description": "Spicy squid and pork belly stir-fry with sweet potato noodles, mushrooms, green onions, carrots, cabbage, and bell peppers", "price": 24, "image": "/images/menu/SpicySquid&PorkBellyStirfry.jpg" },
+        { "name": "Spicy Baby Octopus Stir-fry", "korean": "불쭈꾸미 | Bool Joo Koo Mi", "description": "Baby octopus, rice cakes, vegetables, fiery chili sauce", "price": 24, "image": "/images/menu/SpicyBabyOctopusStirfry.jpg" }
       ]
     },
     {
       "name": "Noodles",
-      "image": "/images/menu/korean-bbq-menu-noodles.jpg",
       "items": [
-        { "name": "Cold Buckwheat Noodle Soup", "description": "Mool nengmyun", "price": 16 },
-        { "name": "Spicy Cold Buckwheat Noodles", "description": "Bibim nengmyun", "price": 16 },
-        { "name": "Jajangmyeon", "description": "Black bean noodles", "price": 16 },
-        { "name": "Spicy Seafood Noodle Soup", "description": "Jjampong", "price": 18 },
-        { "name": "Jajang + Jjampong", "description": "Half and half combination", "price": 17 }
+        { "name": "Cold Buckwheat Noodle Soup", "korean": "물냉면 | Mool Nengmyun", "description": "Cold beef broth with buckwheat noodles, beef brisket, egg, pickled radish, and cucumbers, topped with scallions and sesame seeds. Spicy mustard & vinegar on the side", "price": 16, "image": "/images/menu/ColdBuckWheatNoodleSoup.jpg" },
+        { "name": "Spicy Cold Buckwheat Noodles", "korean": "비빔냉면 | Bibim Nengmyun", "description": "Cold buckwheat noodles tossed in spicy red pepper sauce, topped with cucumbers, beef brisket, pickled daikon, and a hard-boiled egg", "price": 16, "image": "/images/menu/SpicyColdBuckwheatNoodles.jpg" },
+        { "name": "Jajangmyeon", "korean": "짜장면 | Jajangmyeon", "description": "Warm chewy wheat noodles with stir-fried black bean sauce, pork, zucchini, and onions, topped with fresh cucumber and sesame seeds", "price": 16, "image": "/images/menu/Jajangmyeon.jpg" },
+        { "name": "Spicy Seafood Noodle Soup", "korean": "짬뽕 | Jjampong", "description": "Spicy seafood soup with vegetables and chewy wheat noodles — shrimp, mussels, squid, and clams", "price": 18, "image": "/images/menu/SpicySeafoodNoodleSoup.jpg" },
+        { "name": "Jajang + Jjampong", "korean": null, "description": "Smaller bowls of black bean noodles and spicy seafood soup", "price": 17, "image": "/images/menu/Jajang+Jjambong.jpg" }
       ]
     },
     {
       "name": "Additional Entrees",
-      "image": "/images/menu/korean-bbq-menu-entrees.jpg",
       "items": [
-        { "name": "Sweet Sour Fried Tangsuyuk", "description": "Choice of protein", "price": 19 },
-        { "name": "Sweet Spicy Fried Kampongi", "description": "Choice of protein", "price": 19 },
-        { "name": "Broiled Mackerel", "description": "Goh deung uh", "price": 16 },
-        { "name": "Spicy Galbi Jjim", "description": "Mae-un galbi jjim", "price": 34 },
-        { "name": "Spicy Buldak", "description": "Cheese-topped chicken", "price": 18 }
+        { "name": "Sweet Sour Fried Tangsuyuk", "korean": "탕수육 | Tangsuyuk", "description": "Sweet and sour sauce drizzled over crispy fried pork, chicken, beef, or tofu, with bell peppers and carrots. Substitute shrimp (+3)", "price": 19, "image": "/images/menu/SweetSourFriedTangsuyuk.jpg" },
+        { "name": "Sweet Spicy Fried Kampongi", "korean": "깐풍기 | Kampongi", "description": "Fried chicken, pork, beef, or tofu stir-fried with vegetables and tossed in a sweet and spicy sauce. Substitute shrimp (+3)", "price": 19, "image": "/images/menu/SweetSpicyFriedKampongi.jpg" },
+        { "name": "Broiled Mackerel", "korean": "고등어 | Goh Deung Uh", "description": "Broiled bone-in mackerel filet served with ponzu sauce and rice", "price": 16, "image": "/images/menu/BroiledMackerel.jpg" },
+        { "name": "Spicy Galbi Jjim", "korean": "매운갈비찜 | Mae-un Galbi Jjim", "description": "Tender braised short ribs in a sweet and spicy gochujang marinade with rice cakes, carrots, scallions, and onions", "price": 34, "image": "/images/menu/SpicyGalbiJjim.jpg" },
+        { "name": "Spicy Buldak", "korean": "치즈불닭 | Bul Dahk", "description": "Sautéed spicy chicken, green onions, and rice cakes topped with melted cheese", "price": 18, "image": "/images/menu/SpicyBuldak.jpg" }
       ]
     }
   ]

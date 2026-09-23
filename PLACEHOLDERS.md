@@ -24,12 +24,16 @@ The two concepts use different approaches, per client direction:
 **Korean BBQ** — real, confirmed content. `data/menus/korean-bbq.json` holds the
 current dinner menu (categories, items, Korean names, prices), transcribed from
 the client's live menu at tomukunbbq.framer.website/menu on 2026-09-23, rendered
-as structured text by `components/MenuSection.js`. Each section has a real dish
-photo as a header image (from the photo shoot in `/public/images/menu/` — see
-[`public/images/README.md`](public/images/README.md) for the file-to-section
-mapping). No `PLACEHOLDER —` labeling — treated as confirmed, not draft, content.
+by `components/MenuSection.js` as a 3-per-row grid of item cards (matching that
+site's per-item layout). No `PLACEHOLDER —` labeling on the menu text — treated
+as confirmed, not draft, content.
+- **Item photos are intentionally blank** — each item has an `"image": null`
+  field in the JSON and renders an empty dashed-border box in the grid, per
+  client request (client will add photos manually). To fill one in: set
+  `"image"` to a file path (e.g. `/images/menu/korean-bbq-shortribs.jpg`) —
+  see [`public/images/README.md`](public/images/README.md). The real photo
+  shoot already sitting in `/public/images/menu/` is available to pull from.
 - Re-check against the live site before launch in case the menu/prices change.
-- Stir Fry section has no header photo yet.
 - `/data/menus/noodle-bar.json` (unrelated concept) is still the old
   third-party-sourced placeholder data — see below.
 
