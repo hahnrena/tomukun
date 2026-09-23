@@ -7,8 +7,15 @@ any of these is a drop-in swap — no component refactoring required.
 Location: `/public/images/`. Full list, purpose, and required dimensions: see
 [`public/images/README.md`](public/images/README.md).
 - `hero-home.jpg`, `hero-korean-bbq.jpg`, `hero-noodle-bar.jpg` — **real client photos**, already in place.
+- `about-founder.jpg` — **temporary stand-in, not an actual photo of Tom Yon.**
+  Client supplied a food/restaurant-scene image (split BBQ grilling + ramen
+  bowl, landscape) for this slot despite it not matching "founder portrait"
+  content or aspect ratio (slot expects 4:5 portrait of a person) — used as
+  directed, but still flagged `PLACEHOLDER —` in the alt text
+  ([pages/about.js](pages/about.js)) since it isn't the real thing. Replace
+  with an actual portrait of Tom Yon when available.
 - Still placeholders: `bbq-grill-01.jpg`, `bbq-interior-01.jpg`, `noodle-ramen-01.jpg`,
-  `noodle-interior-01.jpg`, `about-founder.jpg`, `og-image.jpg`
+  `noodle-interior-01.jpg`, `og-image.jpg`
 
 ## Brand assets
 - `/public/brand/logo.svg` — text wordmark placeholder, replace with final logo file.

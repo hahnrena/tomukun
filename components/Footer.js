@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { siteInfo, concepts } from '../data/site';
+import { InstagramIcon, FacebookIcon } from './icons/SocialIcons';
 
 const Wrapper = styled.footer`
   background: ${({ theme }) => theme.colors.surface};
@@ -52,6 +53,18 @@ const StyledLink = styled.a`
   }
 `;
 
+const IconLink = styled(StyledLink)`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+  }
+`;
+
 const Bottom = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 3rem auto 0;
@@ -80,8 +93,8 @@ export default function Footer() {
 
         <Column>
           <Heading>Hours</Heading>
-          <Text>Open daily</Text>
-          <Text>11:30 AM – 9:30 PM</Text>
+          <Text>Korean BBQ: {concepts.koreanBbq.hours}</Text>
+          <Text>Noodle Bar: {concepts.noodleBar.hours}</Text>
         </Column>
 
         <Column>
@@ -102,15 +115,18 @@ export default function Footer() {
 
         <Column>
           <Heading>Follow</Heading>
-          <StyledLink href={siteInfo.social.instagram} target="_blank" rel="noreferrer">
+          <IconLink href={siteInfo.social.instagram} target="_blank" rel="noreferrer">
+            <InstagramIcon />
             Instagram
-          </StyledLink>
-          <StyledLink href={concepts.koreanBbq.facebook} target="_blank" rel="noreferrer">
+          </IconLink>
+          <IconLink href={concepts.koreanBbq.facebook} target="_blank" rel="noreferrer">
+            <FacebookIcon />
             Facebook — Korean BBQ
-          </StyledLink>
-          <StyledLink href={concepts.noodleBar.facebook} target="_blank" rel="noreferrer">
+          </IconLink>
+          <IconLink href={concepts.noodleBar.facebook} target="_blank" rel="noreferrer">
+            <FacebookIcon />
             Facebook — Noodle Bar
-          </StyledLink>
+          </IconLink>
         </Column>
       </Grid>
 

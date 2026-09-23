@@ -4,22 +4,9 @@ import Hero from '../components/Hero';
 import Image from '../components/Image';
 
 const Section = styled.section`
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 5rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 3rem;
-  align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const PortraitFrame = styled.div`
-  aspect-ratio: 4 / 5;
-  position: relative;
 `;
 
 const Eyebrow = styled.p`
@@ -65,44 +52,22 @@ export default function AboutPage() {
         image="/images/about-founder.jpg"
         alt="PLACEHOLDER — Tomukun founder Tom Yon"
         eyebrow="About"
-        title="One founder, two tables."
+        title="Korean Comfort, Two Ways."
         short
       />
 
       <Section>
-        <PortraitFrame>
-          <Image src="/images/about-founder.jpg" alt="PLACEHOLDER — Tom Yon, founder of Tomukun" />
-        </PortraitFrame>
-
-        <div>
-          <Eyebrow>Tom Yon, Founder</Eyebrow>
-          {/* TODO: replace draft founder story with client-approved copy — see CLAUDE.md open question re: existing About copy */}
-          <Body>
-            Tom Yon, a Michigan State University economics grad, opened Tomukun Noodle Bar on
-            E. Liberty St in 2010 — Ann Arbor&apos;s answer to the noodle-bar concepts he&apos;d
-            seen thrive in LA and New York. The menu drew directly from his parents&apos; home
-            cooking, filtered through his own upbringing as a second-generation Korean American.
-          </Body>
-          <Body>
-            When the storefront next door opened up in 2014, Tom expanded with Tomukun Korean
-            BBQ — a tabletop-grilling concept shaped by his family&apos;s own Korean BBQ
-            traditions, but built with a more casual, minimalistic room than most Korean BBQ
-            spots offer.
-          </Body>
-        </div>
+        <Body>
+          Tomukun began on E. Liberty Street in 2010 with a simple idea: bring the bold, comforting flavors of Korean home cooking into a modern, casual noodle bar. The menu draws from traditional Korean flavors and family recipes, while keeping the experience approachable, unfussy, and distinctly Tomukun.
+        </Body>
+        <Body>
+          In 2014, the restaurant expanded next door with Tomukun Korean BBQ, introducing tabletop grilling alongside the original Noodle Bar. Together, the two spaces offer different ways to experience Korean comfort food — from bowls of handmade noodles to sizzling meats shared around the table.
+        </Body>
+        <Body>
+          Today, Tomukun remains rooted in the same idea: good food, a welcoming table, and Korean flavors made for gathering.
+        </Body>
       </Section>
 
-      <Philosophy>
-        <Eyebrow>Philosophy</Eyebrow>
-        <Body>
-          Modern, minimalistic, and unfussy — a contemporary take on Korean comfort food and
-          BBQ that keeps the focus on the table, not the trend.
-        </Body>
-        <Note>
-          Founder biography drawn from press and third-party sources; pending final review and
-          approval by the client.
-        </Note>
-      </Philosophy>
     </Layout>
   );
 }
