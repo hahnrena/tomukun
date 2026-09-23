@@ -45,7 +45,7 @@ export const concepts = {
     name: 'Noodle Bar',
     tagline: 'Comfort noodles, Ann Arbor’s original.',
     description:
-      'Ramen and noodle comfort food rooted in founder Tom Yon’s Korean-American upbringing. Quick, casual, and where the Tomukun story started in 2010.',
+      'Ramen and noodle comfort food. Quick, casual, and where the Tomukun story started in 2010.',
     href: '/noodle-bar',
     orderUrl: 'https://order.toasttab.com/online/tomukunnoodlebar',
     hours: 'Open daily, 11:30 AM – 10:00 PM',

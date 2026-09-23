@@ -65,11 +65,8 @@ export default function NoodleBarPage() {
       />
 
       <Intro>
-        {/* TODO: replace draft copy with client-approved concept description */}
         <Body>
-          Where Tomukun started in 2010. Ramen and jajangmyun rooted in founder Tom Yon&apos;s
-          Korean-American upbringing, served quick and casual with a few vegetarian-adaptable
-          options. A stark, contemporary room built for a fast, comforting bowl.
+          Where Tomukun started in 2010. A neighborhood noodle bar serving comforting bowls of ramen, jajangmyun, and other Asian-inspired favorites, made for quick lunches, casual dinners, and everything in between. A warm space centered around bold flavors, generous bowls, and the simple comfort of noodles.
         </Body>
 
         <CTARow>
