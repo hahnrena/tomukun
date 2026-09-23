@@ -22,8 +22,6 @@ export const siteInfo = {
   social: {
     instagram: 'https://www.instagram.com/tomukuna2/?hl=en',
   },
-  // TODO: confirm parking details with client (street parking / no dedicated lot per CLAUDE.md)
-  parkingNote: 'PLACEHOLDER — street parking nearby; no dedicated lot (unconfirmed, verify with client).',
 };
 
 export const concepts = {

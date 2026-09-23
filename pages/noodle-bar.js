@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
-import MenuImages from '../components/MenuImages';
+import MenuSection from '../components/MenuSection';
 import CTAButton from '../components/CTAButton';
 import { siteInfo, concepts } from '../data/site';
-import { noodleBarMenuImages } from '../data/menus/images';
+import menuData from '../data/menus/noodle-bar.json';
 
 const Intro = styled.section`
   max-width: 760px;
@@ -58,7 +58,7 @@ export default function NoodleBarPage() {
     >
       <Hero
         image="/images/hero-noodle-bar.jpg"
-        alt="PLACEHOLDER — Noodle Bar ramen bowl"
+        alt="Tomukun Noodle Bar ramen bowl"
         eyebrow="Tomukun"
         title="Noodle Bar"
         subtitle="Comfort noodles, Ann Arbor's original."
@@ -79,7 +79,7 @@ export default function NoodleBarPage() {
         </CTARow>
       </Intro>
 
-      <MenuImages images={noodleBarMenuImages} />
+      <MenuSection menu={menuData} />
 
       <InfoSection>
         <Card>

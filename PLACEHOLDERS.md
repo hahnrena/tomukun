@@ -24,54 +24,59 @@ Location: `/public/images/`. Full list, purpose, and required dimensions: see
   `noodle-interior-01.jpg`
 
 ## Brand assets
-- `/public/brand/logo.svg` — text wordmark placeholder, replace with final logo file.
-- `/public/brand/logo-mark.svg` — monogram placeholder, replace with final mark.
-- `/public/brand/favicon.ico` — generated placeholder, replace with final favicon.
-- `/styles/theme.js` — `colors` and `fonts` tokens are provisional. All colors/fonts
-  are defined here only (no hardcoded values in components), so this is the single
-  file to update once brand guidelines are final.
+- **Real logo in place** — Nav uses `/public/brand/tomukun-logo.svg`, the
+  client's actual wordmark (see [components/Nav.js](components/Nav.js)).
+  `logo.svg` and `logo-mark.svg` are the old text-wordmark placeholders,
+  now unused — safe to delete, kept for now in case they're wanted for
+  reference.
+- **Favicon — real, SVG primary**: `components/Layout.js` now points
+  `<link rel="icon">` at `/public/brand/favicon.svg` (the client's real
+  favicon), with the old `favicon.ico` kept only as an `alternate icon`
+  fallback for browsers that don't support SVG favicons.
+- `/styles/theme.js` — colors and fonts are the client's confirmed final
+  choices, not placeholders (despite the `PLACEHOLDER Serif`/`PLACEHOLDER
+  Sans` font-family names still in the code — left as-is per client
+  direction, not swapped for a different typeface).
 
 ## Menu content
-The two concepts use different approaches, per client direction:
+Both concepts are now real, confirmed content — no more `PLACEHOLDER —` menu
+data anywhere.
 
-**Korean BBQ** — real, confirmed content, now split into three tabs via
-`components/MenuTabs.js` (matching tomukunbbq.framer.website/menu):
+**Korean BBQ** — split into three tabs via `components/MenuTabs.js` (matching
+tomukunbbq.framer.website/menu):
 - **Dinner Menu** tab — `data/menus/korean-bbq.json` (categories, items, Korean
-  names, prices, and now real item photos for all but 2 items — see below),
-  rendered by `components/MenuSection.js` as a 3-per-row grid. No
-  `PLACEHOLDER —` labeling on the menu text — treated as confirmed content.
-  Re-check against the live site before launch in case the menu/prices change.
+  names, prices, real item photos for all but 2 items), rendered by
+  `components/MenuSection.js` as a 3-per-row grid. Re-check against the live
+  site before launch in case the menu/prices change.
 - **Drinks Menu** tab — pages through real menu-page images one at a time via
   `components/MenuPager.js` (prev/next arrows + a "2 / 3" counter), listed in
   `data/menus/images.js` → `koreanBbqDrinksMenuImages` and stored at
   `public/images/menu/DrinksMenuPage1.png` (`-2`, `-3`). A "prefer the full
-  document?" link below the pager still points to the original
+  document?" link above the pager still points to the original
   `public/menus/korean-bbq-drinks-menu.pdf` (copied from the client's
   `Final bbq bar.pdf`) as a fallback.
-- **Lunch Menu** tab — still embeds `public/menus/korean-bbq-lunch-menu.pdf`
-  (copied from `Tomukun K-BBQ Lunch Menu.pdf`) inline via an iframe, with an
-  "open directly" fallback link for browsers that don't render PDFs in iframes.
+- **Lunch Menu** tab — same `MenuPager` treatment, single image
+  (`LunchMenuPage.png`), no prev/next arrows since there's only one page. Also
+  links back to the original `public/menus/korean-bbq-lunch-menu.pdf`.
 - To add/reorder Drinks Menu pages: drop image files in
   `public/images/menu/` and update the array in `data/menus/images.js`. To
   swap either PDF: replace the file at the same path, or repoint
   `concepts.koreanBbq.drinksMenuUrl` / `lunchMenuUrl` in
   [data/site.js](data/site.js) to a new path.
-- `/data/menus/noodle-bar.json` (unrelated concept) is still the old
-  third-party-sourced placeholder data — see below.
 
-**Noodle Bar** — still awaiting real content. Renders real, client-supplied menu
-*images* directly (see `components/MenuImages.js`) rather than structured text.
-- Location: `/public/images/menu/` — see
-  [`public/images/README.md`](public/images/README.md) for naming convention and
-  the `data/menus/images.js` file list.
-- **Awaiting the actual image files** — `data/menus/images.js` currently has an
-  empty array, so the page shows "Menu coming soon." Drop the files in and list
-  them there to go live. No `PLACEHOLDER —` labeling needed once added — treated
-  as confirmed client content.
-- Note: an image-only menu isn't machine-readable (no text for SEO/screen readers
-  beyond the alt text) — flagging in case that tradeoff needs revisiting later,
-  e.g. moving Noodle Bar to the same structured-text approach as Korean BBQ once
-  its real menu content is available.
+**Noodle Bar** — `data/menus/noodle-bar.json` (11 sections, ~85 items,
+transcribed from order.toasttab.com/online/tomukunnoodlebar), rendered by the
+same `components/MenuSection.js` grid as Korean BBQ. No item photos and
+**intentionally no blank image placeholders** — `MenuSection.js` only renders
+an item's image slot when `image` is actually set, so Noodle Bar cards show
+just name/price with no empty box. (`components/MenuImages.js`, the old
+image-only menu viewer this replaced, has been deleted as dead code.)
+- Menu items have no `description` (Toast's page only listed name + price) —
+  add descriptions later if the client wants them.
+- One item (`Katsu Buns`, Summer Menu) was marked unavailable at the source;
+  its description reads "Currently unavailable" rather than being silently
+  dropped — revisit if that's changed.
+- Re-check against the live Toast page before launch in case items/prices change.
 
 ## Copy
 - Homepage brand statement ([pages/index.js](pages/index.js))
@@ -89,7 +94,6 @@ The two concepts use different approaches, per client direction:
   `social.facebook` are now real, per-concept values — see `concepts.koreanBbq`
   / `concepts.noodleBar`.)
 - `social.instagram` — real, shared handle for both concepts.
-- `parkingNote` — unconfirmed, verify with client.
 - **Hours — now real, confirmed, and differ by concept**:
   `concepts.koreanBbq.hours` = "Open daily, 11:30 AM – 9:30 PM",
   `concepts.noodleBar.hours` = "Open daily, 11:30 AM – 10:00 PM". This

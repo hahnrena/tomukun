@@ -62,8 +62,9 @@ const ItemCard = styled.div`
   padding: 16px;
 `;
 
-// Blank until real dish photos are dropped in — see PLACEHOLDERS.md.
-// Set `image` on the item in data/menus/korean-bbq.json to fill it in.
+// Only rendered when the item has an `image` set — items without one (e.g.
+// the whole Noodle Bar menu) skip the image slot entirely rather than
+// showing a blank box. Set `image` on an item to add one.
 const ItemImageFrame = styled.div`
   position: relative;
   width: 100%;
@@ -140,8 +141,8 @@ export default function MenuSection({ menu }) {
           <ItemGrid>
             {(section.items ?? []).map((item) => (
               <ItemCard key={item.name}>
-                <ItemImageFrame>
-                  {item.image && (
+                {item.image && (
+                  <ItemImageFrame>
                     <NextImage
                       src={item.image}
                       alt={item.name}
@@ -149,8 +150,8 @@ export default function MenuSection({ menu }) {
                       sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
                       style={{ objectFit: 'cover' }}
                     />
-                  )}
-                </ItemImageFrame>
+                  </ItemImageFrame>
+                )}
                 <ItemBody>
                   <ItemName>{item.name}</ItemName>
                   {item.korean && <ItemKorean>{item.korean}</ItemKorean>}
