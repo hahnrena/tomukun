@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import ContactForm from '../components/ContactForm';
-import { siteInfo } from '../data/site';
+import { siteInfo, concepts } from '../data/site';
 
 const Wrapper = styled.section`
   max-width: 1100px;
@@ -93,8 +93,12 @@ export default function ContactPage() {
               </InfoValue>
             </InfoRow>
             <InfoRow>
-              <InfoLabel>Phone</InfoLabel>
-              <InfoValue>{siteInfo.phone}</InfoValue>
+              <InfoLabel>Phone — Korean BBQ</InfoLabel>
+              <InfoValue>{concepts.koreanBbq.phone}</InfoValue>
+            </InfoRow>
+            <InfoRow>
+              <InfoLabel>Phone — Noodle Bar</InfoLabel>
+              <InfoValue>{concepts.noodleBar.phone}</InfoValue>
             </InfoRow>
             <InfoRow>
               <InfoLabel>Email</InfoLabel>

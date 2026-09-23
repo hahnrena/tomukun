@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { siteInfo } from '../data/site';
+import { siteInfo, concepts } from '../data/site';
 
 const Wrapper = styled.footer`
   background: ${({ theme }) => theme.colors.surface};
@@ -73,7 +73,9 @@ export default function Footer() {
           <Heading>Tomukun</Heading>
           <Text>{siteInfo.address.line1}</Text>
           <Text>{siteInfo.address.line2}</Text>
-          <Text>{siteInfo.phone}</Text>
+          <Text>Korean BBQ: {concepts.koreanBbq.phone}</Text>
+          <Text>Noodle Bar: {concepts.noodleBar.phone}</Text>
+          <StyledLink href={`mailto:${siteInfo.email}`}>{siteInfo.email}</StyledLink>
         </Column>
 
         <Column>
@@ -100,12 +102,14 @@ export default function Footer() {
 
         <Column>
           <Heading>Follow</Heading>
-          {/* TODO: replace with client-provided social links */}
           <StyledLink href={siteInfo.social.instagram} target="_blank" rel="noreferrer">
             Instagram
           </StyledLink>
-          <StyledLink href={siteInfo.social.facebook} target="_blank" rel="noreferrer">
-            Facebook
+          <StyledLink href={concepts.koreanBbq.facebook} target="_blank" rel="noreferrer">
+            Facebook — Korean BBQ
+          </StyledLink>
+          <StyledLink href={concepts.noodleBar.facebook} target="_blank" rel="noreferrer">
+            Facebook — Noodle Bar
           </StyledLink>
         </Column>
       </Grid>

@@ -8,10 +8,7 @@ export const siteInfo = {
     crossStreet: 'Liberty & Division',
     mapQuery: '505 E. Liberty St, Ann Arbor, MI 48104',
   },
-  // PLACEHOLDER — confirm current phone number with client
-  phone: 'PLACEHOLDER — (734) 000-0000',
-  // PLACEHOLDER — confirm current contact email with client
-  email: 'PLACEHOLDER — info@tomukun.com',
+  email: 'info@tomukun.com',
   hours: [
     { day: 'Monday', time: '11:30 AM – 9:30 PM' },
     { day: 'Tuesday', time: '11:30 AM – 9:30 PM' },
@@ -31,20 +28,10 @@ export const siteInfo = {
     verified: false,
   },
   social: {
-    // PLACEHOLDER — confirm current handles with client
-    instagram: 'PLACEHOLDER — https://instagram.com/tomukun',
-    facebook: 'PLACEHOLDER — https://facebook.com/tomukun',
+    instagram: 'https://www.instagram.com/tomukuna2/?hl=en',
   },
   // TODO: confirm parking details with client (street parking / no dedicated lot per CLAUDE.md)
   parkingNote: 'PLACEHOLDER — street parking nearby; no dedicated lot (unconfirmed, verify with client).',
-  reservations: {
-    provider: 'opentable',
-    // PLACEHOLDER — this is not a real OpenTable Restaurant ID. Replace with the
-    // client's actual OpenTable rid (from their OpenTable for Restaurants account)
-    // before launch, or the widget will fail to load a bookable calendar.
-    // TODO: confirm OpenTable account / Restaurant ID with client.
-    openTableRestaurantId: 'PLACEHOLDER-RID',
-  },
 };
 
 export const concepts = {
@@ -56,6 +43,9 @@ export const concepts = {
       "Grill your own marinated meats tableside — bulgogi, galbi, spicy pork — alongside banchan, rice bowls, and stews. Modern, dark-wood dining with a full bar and an easy, unfussy take on Korean BBQ.",
     href: '/korean-bbq',
     orderUrl: 'https://toast.app/r/tomukunbbq/order',
+    phone: '(734) 369-2602',
+    facebook: 'https://www.facebook.com/tomukunkoreanbbq/',
+    openTableUrl: 'https://www.opentable.com/r/tomukun-korean-barbeque-ann-arbor',
   },
   noodleBar: {
     slug: 'noodle-bar',
@@ -65,6 +55,8 @@ export const concepts = {
       'Ramen and noodle comfort food rooted in founder Tom Yon’s Korean-American upbringing. Quick, casual, and where the Tomukun story started in 2010.',
     href: '/noodle-bar',
     orderUrl: 'https://order.toasttab.com/online/tomukunnoodlebar',
+    phone: '(734) 995-8668',
+    facebook: 'https://www.facebook.com/p/Tomukun-Noodle-Bar-100063564281436/',
   },
 };
 

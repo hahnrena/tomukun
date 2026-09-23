@@ -62,10 +62,16 @@ mapping). No `PLACEHOLDER —` labeling — treated as confirmed, not draft, con
   only) is shown on the Korean BBQ page but flagged as unconfirmed until the client verifies.
 
 ## Reservations
-- `/data/site.js` → `reservations.openTableRestaurantId` is a placeholder value.
-  [components/ReservationWidget.js](components/ReservationWidget.js) renders a live OpenTable
-  booking calendar automatically once a real Restaurant ID is supplied; until then it shows
-  a "call to reserve" fallback.
+- **Now live** — [components/ReservationWidget.js](components/ReservationWidget.js) is a
+  "Reserve on OpenTable" button linking to the real listing at
+  `concepts.koreanBbq.openTableUrl` in [data/site.js](data/site.js)
+  (https://www.opentable.com/r/tomukun-korean-barbeque-ann-arbor). Korean BBQ only —
+  Noodle Bar has no reservation flow per CLAUDE.md.
+- This links out to OpenTable rather than embedding their iframe widget, since the
+  widget needs OpenTable's numeric Restaurant ID (`rid`), which isn't available from
+  the public listing URL alone. If an embedded booking calendar is wanted instead,
+  get the `rid` from the client's OpenTable for Restaurants account and swap
+  `ReservationWidget.js` back to the loader-script approach.
 
 ## Order Now
 - No shared nav "Order Now" button — Korean BBQ and Noodle Bar are separate
@@ -76,8 +82,23 @@ mapping). No `PLACEHOLDER —` labeling — treated as confirmed, not draft, con
   Noodle Bar → https://order.toasttab.com/online/tomukunnoodlebar.
 
 ## Contact form backend
-- [server/routes/contact.js](server/routes/contact.js) currently logs submissions to an
-  in-memory array/console — swap in real email delivery or persistence before launch.
+- **Now live** — [pages/api/contact.js](pages/api/contact.js) is a Next.js API route
+  (runs as a Vercel serverless function, no separate server to deploy) that emails
+  submissions to `info@tomukun.com` via [Resend](https://resend.com).
+- **Requires an env var to actually send mail**: set `RESEND_API_KEY` in Vercel
+  project settings (Project → Settings → Environment Variables) and in a local
+  `.env.local` for dev — get a key from your Resend dashboard. Without it, the
+  form fails gracefully with an error message instead of silently doing nothing.
+- Optional env vars: `CONTACT_TO_EMAIL` (defaults to `info@tomukun.com`),
+  `CONTACT_FROM_EMAIL` (defaults to Resend's shared test sender
+  `onboarding@resend.dev` — swap to an address on a verified domain, e.g.
+  `contact@tomukun.com`, once you verify `tomukun.com` in Resend; until then
+  Resend will only deliver to the email address on your Resend account, not
+  to `info@tomukun.com`).
+- `server/` (the old Express app) is no longer used by the contact form or
+  anything else in the frontend — it's dead code at this point. Left in place
+  in case you still want it for a future ordering API, but safe to delete if
+  not; nothing currently imports `lib/api.js`'s old `API_BASE_URL` pattern.
 
 ## Dependency security
 - Pinned to Next.js 14.2.35 (latest 14.x patch). One critical advisory
