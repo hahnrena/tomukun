@@ -12,7 +12,7 @@ const Bar = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 2rem;
-  background: ${({ theme }) => theme.colors.navBackground};
+  background: ${({ theme }) => theme.colors.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.navBorder};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
