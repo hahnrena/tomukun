@@ -12,8 +12,8 @@ const Bar = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 2rem;
-  background: ${({ theme }) => theme.colors.background};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.navBackground};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.navBorder};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 1rem 1.25rem;
@@ -48,11 +48,20 @@ const NavLink = styled.a`
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: ${({ theme }) => theme.colors.navTextMuted};
   transition: color 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.navText};
+  }
+
+  /* Mobile drawer keeps the dark surface, so links go back to light text. */
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    color: ${({ theme }) => theme.colors.textMuted};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.text};
+    }
   }
 `;
 
@@ -60,7 +69,8 @@ const MenuToggle = styled.button`
   display: none;
   background: none;
   border: none;
-  color: ${({ theme }) => theme.colors.text};
+  /* Dark on the light bar; light when the dark drawer is open behind it. */
+  color: ${({ theme, $open }) => ($open ? theme.colors.text : theme.colors.navText)};
   font-size: 1.5rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -110,6 +120,7 @@ export default function Nav() {
       </Links>
 
       <MenuToggle
+        $open={open}
         onClick={() => dispatch(toggleMobileNav())}
         aria-label={open ? 'Close menu' : 'Open menu'}
       >
