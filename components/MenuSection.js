@@ -35,9 +35,12 @@ const SectionName = styled.h3`
   color: ${({ theme }) => theme.colors.accent};
 `;
 
+// Same size as SectionName, but in the bright text color so it stands apart
+// from the orange section name.
 const SectionNote = styled.span`
-  font-size: 0.8rem;
-  color: ${({ theme }) => theme.colors.muted};
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const ItemGrid = styled.div`
@@ -74,7 +77,12 @@ const ItemImageFrame = styled.div`
   background: ${({ theme }) => theme.colors.surfaceAlt};
 `;
 
+// Flex column so the price row can sit at the bottom of every card, even when
+// cards in the same grid row have different amounts of text.
 const ItemBody = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 1.25rem 0.5rem 0.35rem;
 `;
 
@@ -101,7 +109,6 @@ const ItemPrice = styled.span`
   display: inline-flex;
   align-items: baseline;
   gap: 0.25rem;
-  margin-top: 1.25rem;
   padding: 0.6rem 1.1rem;
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 12px;
@@ -112,6 +119,17 @@ const ItemPrice = styled.span`
     font-size: 1.15rem;
     font-weight: 700;
   }
+`;
+
+// Pinned to the bottom-left of the card, tiered prices stacked one per line;
+// padding-top keeps a minimum gap above it on the tallest card in the row.
+const ItemPriceRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
 `;
 
 const Empty = styled.p`
@@ -156,9 +174,21 @@ export default function MenuSection({ menu }) {
                   <ItemName>{item.name}</ItemName>
                   {item.korean && <ItemKorean>{item.korean}</ItemKorean>}
                   {item.description && <ItemDescription>{item.description}</ItemDescription>}
-                  <ItemPrice>
-                    $ <strong>{item.price != null ? item.price : 'MP'}</strong>
-                  </ItemPrice>
+                  <ItemPriceRow>
+                    {Array.isArray(item.price) ? (
+                      // Tiered pricing, e.g. [{ amount: 65, label: 'pick 2' }, ...]
+                      item.price.map((tier) => (
+                        <ItemPrice key={tier.label ?? tier.amount}>
+                          $ <strong>{tier.amount}</strong>
+                          {tier.label && ` (${tier.label})`}
+                        </ItemPrice>
+                      ))
+                    ) : (
+                      <ItemPrice>
+                        $ <strong>{item.price != null ? item.price : 'MP'}</strong>
+                      </ItemPrice>
+                    )}
+                  </ItemPriceRow>
                 </ItemBody>
               </ItemCard>
             ))}
