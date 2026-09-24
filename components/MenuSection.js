@@ -107,7 +107,7 @@ const ItemDescription = styled.p`
 
 const ItemPrice = styled.span`
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.25rem;
   padding: 0.6rem 1.1rem;
   border: 1px solid ${({ theme }) => theme.colors.border};
