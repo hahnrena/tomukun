@@ -122,17 +122,17 @@ food; udon/stir fry/drinks; lunch specials & kids), with a link to
 ## Contact form backend
 - **Now live** — [pages/api/contact.js](pages/api/contact.js) is a Next.js API route
   (runs as a Vercel serverless function, no separate server to deploy) that emails
-  submissions to `info@tomukun.com` via [Resend](https://resend.com).
+  submissions to `management@tomukun.com` via [Resend](https://resend.com).
 - **Requires an env var to actually send mail**: set `RESEND_API_KEY` in Vercel
   project settings (Project → Settings → Environment Variables) and in a local
   `.env.local` for dev — get a key from your Resend dashboard. Without it, the
   form fails gracefully with an error message instead of silently doing nothing.
-- Optional env vars: `CONTACT_TO_EMAIL` (defaults to `info@tomukun.com`),
+- Optional env vars: `CONTACT_TO_EMAIL` (defaults to `management@tomukun.com`),
   `CONTACT_FROM_EMAIL` (defaults to Resend's shared test sender
   `onboarding@resend.dev` — swap to an address on a verified domain, e.g.
   `contact@tomukun.com`, once you verify `tomukun.com` in Resend; until then
   Resend will only deliver to the email address on your Resend account, not
-  to `info@tomukun.com`).
+  to `management@tomukun.com`).
 - `server/` (the old Express app) is no longer used by the contact form or
   anything else in the frontend — it's dead code at this point. Left in place
   in case you still want it for a future ordering API, but safe to delete if

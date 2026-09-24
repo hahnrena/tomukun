@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'info@tomukun.com';
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'management@tomukun.com';
 // TODO: once a sending domain is verified in Resend (e.g. mail.tomukun.com),
 // switch this to an address on that domain instead of the shared test sender.
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Tomukun Website <onboarding@resend.dev>';

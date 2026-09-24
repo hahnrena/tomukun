@@ -8,7 +8,7 @@ export const siteInfo = {
     crossStreet: 'Liberty & Division',
     mapQuery: '505 E. Liberty St, Ann Arbor, MI 48104',
   },
-  email: 'info@tomukun.com',
+  email: 'management@tomukun.com',
   // Not currently shown on the site — removed from the Korean BBQ page per
   // client request. Left here in case it comes back later.
   happyHour: {
