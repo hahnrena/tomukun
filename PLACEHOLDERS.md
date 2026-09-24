@@ -130,7 +130,7 @@ food; udon/stir fry/drinks; lunch specials & kids), with a link to
 - Optional env vars: `CONTACT_TO_EMAIL` (defaults to `management@tomukun.com`),
   `CONTACT_FROM_EMAIL` (defaults to Resend's shared test sender
   `onboarding@resend.dev` — swap to an address on a verified domain, e.g.
-  `contact@tomukun.com`, once you verify `tomukun.com` in Resend; until then
+  `forms@tomukun.com`, once you verify `tomukun.com` in Resend; until then
   Resend will only deliver to the email address on your Resend account, not
   to `management@tomukun.com`).
 - `server/` (the old Express app) is no longer used by the contact form or

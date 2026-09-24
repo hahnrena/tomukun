@@ -24,9 +24,29 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Contact form is not configured yet.' });
   }
 
+  if (typeof name !== 'string' || !name.trim() || name.length > 100) {
+  return Response.json({ error: 'Invalid name' }, { status: 400 });
+}
+
+const emailRegex = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
+if (typeof email !== 'string' || email.length > 254 || !emailRegex.test(email)) {
+  return Response.json({ error: 'Invalid email' }, { status: 400 });
+}
+
+if (typeof message !== 'string' || !message.trim() || message.length > 5000) {
+  return Response.json({ error: 'Invalid message' }, { status: 400 });
+}
+
+// --- Sanitize anything that goes into a header ---
+const safeName = name.replace(/[<>"\r\n]/g, '').trim();
+
+if (!safeName) {
+  return Response.json({ error: 'Invalid name' }, { status: 400 });
+}
+
   const subject = source
-    ? `New ${source} inquiry from ${name} via tomukun.com`
-    : `New message from ${name} via tomukun.com`;
+    ? `${source} inquiry from ${safeName} via tomukun.com`
+    : `Inquiry from ${safeName} via tomukun.com`;
 
   const { error } = await resend.emails.send({
     from: FROM_EMAIL,
